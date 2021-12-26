@@ -1,0 +1,42 @@
+#include<iostream>
+class Myclass {
+public:
+	Myclass();
+	~Myclass();
+};
+Myclass::Myclass()
+{
+	std::cout << "Myclass ctor this = " << this << "\n";
+}
+Myclass::~Myclass()
+{
+	std::cout << "Myclass dtor this = " << this << "\n";
+}
+class A {
+public:
+	A();
+	~A();
+};
+A::A()
+{
+	std::cout << "A ctor this = " << this << "\n";
+}
+A::~A()
+{
+	std::cout << "A dtor this = " << this << "\n";
+}
+void func()
+{
+	A ax;
+}
+int main()
+{
+	std::cout << "main basladi\n";
+	Myclass mx;
+	std::cout << "&mx = " << &mx << "\n";
+	std::cout << "main devam ediyor\n";
+	for (int i = 0; i < 5; ++i) {
+		func();
+	}
+
+}
